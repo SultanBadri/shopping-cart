@@ -6,6 +6,10 @@ const H1 = styled.h1`
 `;
 
 const Shop = () => {
+  const title = document.getElementById("title");
+  if (title !== null) {
+    title.innerHTML = "Odinzom | Shop";
+  }
   return <H1>Shop</H1>;
 };
 

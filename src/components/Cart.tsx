@@ -6,6 +6,11 @@ const H1 = styled.h1`
 `;
 
 const Cart = () => {
+  const title = document.getElementById("title");
+  if (title !== null) {
+    title.innerHTML = "Odinzom | Cart";
+  }
+
   return <H1>Cart</H1>;
 };
 

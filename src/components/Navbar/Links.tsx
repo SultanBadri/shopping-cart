@@ -15,6 +15,15 @@ const Ul = styled.ul<Open>`
     text-decoration: none;
     color: white;
     list-style: none;
+    transition: all 0.3s ease;
+  }
+
+  li:hover {
+    color: #bbbebf;
+  }
+
+  @media (max-width: 1024px) {
+    width: 40%;
   }
 
   @media (max-width: 768px) {
@@ -26,10 +35,10 @@ const Ul = styled.ul<Open>`
     li {
       text-align: center;
       padding: 0.5rem;
-      transition: 0.3s ease;
     }
     li:hover {
-      background: #333;
+      color: white;
+      background: #474b52;
     }
   }
 `;

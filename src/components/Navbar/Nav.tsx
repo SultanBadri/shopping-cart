@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaStoreAlt } from "react-icons/fa";
 import BurgerMenu from "./BurgerMenu";
 
-const Navbar = styled.nav<{ open: boolean }>`
+const Navbar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,16 +24,14 @@ const H2 = styled.h2`
 `;
 
 const Nav = () => {
-  const [open, setOpen] = useState(false);
-
   return (
-    <Navbar open={open}>
+    <Navbar>
       <Link to="/" style={{ textDecoration: "none" }}>
         <H2>
           Odinzom <FaStoreAlt style={{ verticalAlign: "middle" }} />
         </H2>
       </Link>
-      <BurgerMenu open={open} setOpen={setOpen} />
+      <BurgerMenu />
     </Navbar>
   );
 };

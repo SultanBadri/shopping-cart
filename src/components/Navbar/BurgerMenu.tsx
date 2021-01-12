@@ -11,17 +11,17 @@ const HamburgerMenu = styled.div<{ open: boolean }>`
     height: 3px;
     margin: 4px;
     background: white;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
     &:nth-child(1) {
       transform: ${({ open }) =>
-        open ? "rotate(-45deg) translate(-5px, 6px)" : "rotate(0)"};
+        open ? "rotate(-45deg) translate(-5px, 5px)" : "rotate(0)"};
     }
     &:nth-child(2) {
       opacity: ${({ open }) => (open ? "0" : "1")};
     }
     &:nth-child(3) {
       transform: ${({ open }) =>
-        open ? "rotate(45deg) translate(-5px, -6px)" : "rotate(0)"};
+        open ? "rotate(45deg) translate(-5px, -5px)" : "rotate(0)"};
     }
   }
 
@@ -29,16 +29,13 @@ const HamburgerMenu = styled.div<{ open: boolean }>`
     display: block;
     position: absolute;
     top: 2.5%;
-    right: 3%;
+    right: 6%;
   }
 `;
 
-interface OpenProps {
-  open: boolean;
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
+const BurgerMenu = () => {
+  const [open, setOpen] = useState(false);
 
-const BurgerMenu: React.FC<OpenProps> = ({ open, setOpen }) => {
   return (
     <>
       <HamburgerMenu open={open} onClick={() => setOpen(!open)}>

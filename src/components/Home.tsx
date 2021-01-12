@@ -6,6 +6,11 @@ const H1 = styled.h1`
 `;
 
 const Home = () => {
+  const title = document.getElementById("title");
+  if (title !== null) {
+    title.innerHTML = "Odinzom | Home";
+  }
+
   return <H1>Home</H1>;
 };
 
