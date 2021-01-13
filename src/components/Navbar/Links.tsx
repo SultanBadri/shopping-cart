@@ -19,7 +19,7 @@ const Ul = styled.ul<Open>`
   }
 
   li:hover {
-    color: #bbbebf;
+    color: #f7ec77;
   }
 
   @media (max-width: 1024px) {

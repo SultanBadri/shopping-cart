@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { FaStoreAlt } from "react-icons/fa";
+import { BiPlanet } from "react-icons/bi";
 import BurgerMenu from "./BurgerMenu";
 
 const Navbar = styled.nav`
@@ -28,7 +28,7 @@ const Nav = () => {
     <Navbar>
       <Link to="/" style={{ textDecoration: "none" }}>
         <H2>
-          Odinzom <FaStoreAlt style={{ verticalAlign: "middle" }} />
+          Odinzom <BiPlanet style={{ verticalAlign: "middle" }} />
         </H2>
       </Link>
       <BurgerMenu />
