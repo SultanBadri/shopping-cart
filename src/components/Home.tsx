@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Space from "../images/space.jpeg";
@@ -71,22 +71,6 @@ const Home = () => {
   if (title !== null) {
     title.innerHTML = "Odinzom | Home";
   }
-
-  // const [picture, setPicture] = useState();
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
-  // const fetchData = async () => {
-  //   const response = await fetch(
-  //     "https://api.nasa.gov/planetary/apod?api_key=LCt4YpWK4MZnYiOujvjl68t3qOvIpGiQxHESaIPC"
-  //   );
-  //   const data = await response.json();
-  //   const image = data["url"];
-  //   console.log(image);
-  //   setPicture(image);
-  // };
 
   return (
     <>
