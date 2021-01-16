@@ -1,21 +1,28 @@
 {
   "files": {
-    "main.js": "/shopping-cart/static/js/main.3029eed8.chunk.js",
-    "main.js.map": "/shopping-cart/static/js/main.3029eed8.chunk.js.map",
+    "main.js": "/shopping-cart/static/js/main.3a68958a.chunk.js",
+    "main.js.map": "/shopping-cart/static/js/main.3a68958a.chunk.js.map",
     "runtime-main.js": "/shopping-cart/static/js/runtime-main.b56c1ee8.js",
     "runtime-main.js.map": "/shopping-cart/static/js/runtime-main.b56c1ee8.js.map",
-    "static/js/2.95096468.chunk.js": "/shopping-cart/static/js/2.95096468.chunk.js",
-    "static/js/2.95096468.chunk.js.map": "/shopping-cart/static/js/2.95096468.chunk.js.map",
+    "static/js/2.8e586bff.chunk.js": "/shopping-cart/static/js/2.8e586bff.chunk.js",
+    "static/js/2.8e586bff.chunk.js.map": "/shopping-cart/static/js/2.8e586bff.chunk.js.map",
     "index.html": "/shopping-cart/index.html",
-    "static/js/2.95096468.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.95096468.chunk.js.LICENSE.txt",
-    "static/media/mercury.4052ef80.png": "/shopping-cart/static/media/mercury.4052ef80.png",
-    "static/media/moon.b6611f31.jpg": "/shopping-cart/static/media/moon.b6611f31.jpg",
-    "static/media/space.554afaf7.jpeg": "/shopping-cart/static/media/space.554afaf7.jpeg",
-    "static/media/venus.a47eceaa.jpg": "/shopping-cart/static/media/venus.a47eceaa.jpg"
+    "static/js/2.8e586bff.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.8e586bff.chunk.js.LICENSE.txt",
+    "static/media/jupiter.11c08118.jpg": "/shopping-cart/static/media/jupiter.11c08118.jpg",
+    "static/media/mercury.89d337b3.png": "/shopping-cart/static/media/mercury.89d337b3.png",
+    "static/media/moon.3321185e.jpg": "/shopping-cart/static/media/moon.3321185e.jpg",
+    "static/media/moon_and_stars.c15fecf9.jpg": "/shopping-cart/static/media/moon_and_stars.c15fecf9.jpg",
+    "static/media/mountain.a20f880b.jpg": "/shopping-cart/static/media/mountain.a20f880b.jpg",
+    "static/media/neptune.6b8f4c54.jpg": "/shopping-cart/static/media/neptune.6b8f4c54.jpg",
+    "static/media/pluto.b217ce71.jpg": "/shopping-cart/static/media/pluto.b217ce71.jpg",
+    "static/media/space.4234a325.jpeg": "/shopping-cart/static/media/space.4234a325.jpeg",
+    "static/media/stars.fe5727fb.jpg": "/shopping-cart/static/media/stars.fe5727fb.jpg",
+    "static/media/uranus.b7600b00.jpg": "/shopping-cart/static/media/uranus.b7600b00.jpg",
+    "static/media/venus.7009a8e5.jpg": "/shopping-cart/static/media/venus.7009a8e5.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.b56c1ee8.js",
-    "static/js/2.95096468.chunk.js",
-    "static/js/main.3029eed8.chunk.js"
+    "static/js/2.8e586bff.chunk.js",
+    "static/js/main.3a68958a.chunk.js"
   ]
 }
