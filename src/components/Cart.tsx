@@ -1,17 +1,35 @@
 import React from "react";
+import Footer from "./Footer";
 import styled from "styled-components";
 
-const H1 = styled.h1`
-  text-align: center;
+const Div = styled.div`
+  width: 60%;
+  margin: 0 auto;
+
+  h1 {
+    margin-top: 3rem;
+    text-align: center;
+  }
 `;
 
-const Cart = () => {
+interface Items {
+  cartItems: never[];
+}
+
+const Cart: React.FC<Items> = ({ cartItems }) => {
   const title = document.getElementById("title");
   if (title !== null) {
     title.innerHTML = "Odinzom | Cart";
   }
 
-  return <H1>Cart</H1>;
+  return (
+    <>
+      <Div>
+        <h1>Cart</h1>
+      </Div>
+      {/* <Footer /> */}
+    </>
+  );
 };
 
 export default Cart;

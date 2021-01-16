@@ -1,11 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer from "../Footer";
 import styled from "styled-components";
-import Space from "../images/space.jpeg";
+import space from "./images/space.jpeg";
+import stars from "./images/stars.jpg";
+import mountain from "./images/mountain.jpg";
+import moonAndStars from "./images/moon_and_stars.jpg";
 
 const HeroDiv = styled.div`
   min-height: 50vh;
-  background: url(${Space}) center;
+  background: url(${space}) center;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -64,6 +68,20 @@ const AboutP = styled.p`
   text-align: center;
   width: 70%;
   margin: 2rem auto;
+  line-height: 1.6;
+`;
+
+const GalleryDiv = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+
+  img {
+    padding: 20px;
+  }
 `;
 
 const Home = () => {
@@ -85,8 +103,15 @@ const Home = () => {
       </AboutDiv>
       <AboutP>
         Thanks to laws passed by the World Congress in 2092, anyone on Earth is
-        legally allowed to buy a planet—but for the right price.
+        legally allowed to buy a planet—but for the right price. However, the
+        one exception being that no one can buy the Earth.
       </AboutP>
+      <GalleryDiv>
+        <img src={stars} width="250px" height="200px" alt="stars" />
+        <img src={mountain} width="250px" height="200px" alt="mountains" />
+        <img src={moonAndStars} width="250px" height="200px" alt="the moon" />
+      </GalleryDiv>
+      {/* <Footer /> */}
     </>
   );
 };

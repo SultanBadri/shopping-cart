@@ -23,7 +23,11 @@ const H2 = styled.h2`
   color: white;
 `;
 
-const Nav = () => {
+interface Items {
+  cartItems: never[];
+}
+
+const Nav: React.FC<Items> = ({ cartItems }) => {
   return (
     <Navbar>
       <Link to="/" style={{ textDecoration: "none" }}>
@@ -31,7 +35,7 @@ const Nav = () => {
           Odinzom <BiPlanet style={{ verticalAlign: "middle" }} />
         </H2>
       </Link>
-      <BurgerMenu />
+      <BurgerMenu cartItems={cartItems} />
     </Navbar>
   );
 };

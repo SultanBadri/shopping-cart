@@ -33,7 +33,11 @@ const HamburgerMenu = styled.div<{ open: boolean }>`
   }
 `;
 
-const BurgerMenu = () => {
+interface Items {
+  cartItems: never[];
+}
+
+const BurgerMenu: React.FC<Items> = ({ cartItems }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -43,7 +47,7 @@ const BurgerMenu = () => {
         <div></div>
         <div></div>
       </HamburgerMenu>
-      <Links open={open} />
+      <Links open={open} cartItems={cartItems} />
     </>
   );
 };

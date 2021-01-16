@@ -5,7 +5,7 @@ import { TiHomeOutline } from "react-icons/ti";
 import { BiShoppingBag } from "react-icons/bi";
 import { CgShoppingCart } from "react-icons/cg";
 
-const Ul = styled.ul<Open>`
+const Ul = styled.ul<Condition>`
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -43,13 +43,14 @@ const Ul = styled.ul<Open>`
   }
 `;
 
-interface Open {
+interface Condition {
   open: boolean;
+  cartItems: never[];
 }
 
-const Links: React.FC<Open> = ({ open }) => {
+const Links: React.FC<Condition> = ({ open, cartItems }) => {
   return (
-    <Ul open={open}>
+    <Ul open={open} cartItems={cartItems}>
       <Link to="/" style={{ textDecoration: "none" }}>
         <li>
           {" "}
@@ -66,7 +67,7 @@ const Links: React.FC<Open> = ({ open }) => {
         <li>
           {" "}
           <CgShoppingCart />
-          Cart
+          Cart {cartItems.length > 0 ? `(${cartItems.length})` : null}
         </li>
       </Link>
     </Ul>
