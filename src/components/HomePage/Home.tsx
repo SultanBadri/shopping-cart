@@ -56,7 +56,7 @@ const AboutDiv = styled.div`
   h2::after {
     content: "";
     position: absolute;
-    right: 25%;
+    right: 32%;
     bottom: -10px;
     width: 50px;
     height: 3px;
@@ -66,7 +66,7 @@ const AboutDiv = styled.div`
 
 const AboutP = styled.p`
   text-align: center;
-  width: 70%;
+  width: 50%;
   margin: 2rem auto;
   line-height: 1.6;
 `;
@@ -77,7 +77,7 @@ const GalleryDiv = styled.div`
   align-items: center;
   justify-content: center;
   width: 80%;
-  margin: 0 auto;
+  margin: 3rem auto;
 
   img {
     padding: 20px;
@@ -111,7 +111,7 @@ const Home = () => {
         <img src={mountain} width="250px" height="200px" alt="mountains" />
         <img src={moonAndStars} width="250px" height="200px" alt="the moon" />
       </GalleryDiv>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

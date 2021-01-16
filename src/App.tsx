@@ -17,7 +17,7 @@ const App: React.FC = () => {
           <Shop cartItems={cartItems} setCartItems={setCartItems} />
         </Route>
         <Route path="/cart" exact>
-          <Cart cartItems={cartItems} />
+          <Cart cartItems={cartItems} setCartItems={setCartItems} />
         </Route>
       </Switch>
     </HashRouter>

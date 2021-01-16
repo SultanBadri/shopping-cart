@@ -49,7 +49,6 @@ const shopItem: React.FC<ItemKeys> = ({
   setCartItems,
 }) => {
   const handleClick = () => {
-    alert("Added to your cart!");
     setCartItems((prev: any) => [...prev, name]);
   };
 
