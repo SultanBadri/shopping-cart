@@ -1,5 +1,5 @@
 import React from "react";
-import ShopItem from "./shopItem";
+import ShopItem from "./ShopItem";
 import styled from "styled-components";
 import theMoon from "../images/moon.jpg";
 import mercury from "../images/mercury.png";

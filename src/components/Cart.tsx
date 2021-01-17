@@ -50,13 +50,15 @@ const Cart: React.FC<Items> = ({ cartItems, setCartItems }) => {
   return (
     <>
       <Div>
-        <h1>Cart</h1>
+        <h1>My cart</h1>
         <ul>
           {cartItems.map((item, i) => {
             return <li key={i}>{item}</li>;
           })}
         </ul>
-        <button onClick={handlePurchase}>Purchase</button>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <button onClick={handlePurchase}>Purchase</button>
+        </div>
       </Div>
       {/* <Footer /> */}
     </>

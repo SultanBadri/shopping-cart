@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const ItemDiv = styled.div`
@@ -16,6 +16,23 @@ const ItemDiv = styled.div`
   }
 
   button {
+    background: none;
+    border: none;
+    outline: none;
+    // font-size: 2rem;
+  }
+
+  input {
+    text-align: center;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .add-to-cart {
     outline: none;
     border: none;
     padding: 8px 32px;
@@ -41,14 +58,23 @@ interface ItemKeys {
   setCartItems: React.Dispatch<any>;
 }
 
-const shopItem: React.FC<ItemKeys> = ({
+const ShopItem: React.FC<ItemKeys> = ({
   name,
   src,
   price,
   cartItems,
   setCartItems,
 }) => {
-  const handleClick = () => {
+  const [quantity, setQuantity] = useState(0);
+
+  const decrement = () => {
+    if (quantity === 0) return;
+    setQuantity(quantity - 1);
+  };
+
+  const increment = () => setQuantity(quantity + 1);
+
+  const addToCart = () => {
     setCartItems((prev: any) => [...prev, name]);
   };
 
@@ -60,10 +86,16 @@ const shopItem: React.FC<ItemKeys> = ({
         </h2>
         <img src={src} alt={name} />
         <br />
-        <button onClick={handleClick}>Buy Now</button>
+        <button onClick={decrement}>-</button>
+        <input type="number" value={quantity} />
+        <button onClick={increment}>+</button>
+        <br />
+        <button className="add-to-cart" onClick={addToCart}>
+          Add to cart
+        </button>
       </div>
     </ItemDiv>
   );
 };
 
-export default shopItem;
+export default ShopItem;
