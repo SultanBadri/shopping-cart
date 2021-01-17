@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "./Footer";
 import Items from "../data/Items";
 import styled from "styled-components";
 
@@ -13,12 +12,12 @@ const Div = styled.div`
   }
 `;
 
-interface Items {
+interface CartItems {
   cartItems: never[];
   setCartItems: React.Dispatch<any>;
 }
 
-const Shop: React.FC<Items> = ({ cartItems, setCartItems }) => {
+const Shop: React.FC<CartItems> = ({ cartItems, setCartItems }) => {
   const title = document.getElementById("title");
   if (title !== null) {
     title.innerHTML = "Odinzom | Shop";
@@ -30,7 +29,6 @@ const Shop: React.FC<Items> = ({ cartItems, setCartItems }) => {
         <h1>Shop</h1>
         <Items cartItems={cartItems} setCartItems={setCartItems} />
       </Div>
-      {/* <Footer /> */}
     </>
   );
 };

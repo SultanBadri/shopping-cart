@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "./Footer";
 import styled from "styled-components";
 
 const Div = styled.div`
@@ -60,7 +59,6 @@ const Cart: React.FC<Items> = ({ cartItems, setCartItems }) => {
           <button onClick={handlePurchase}>Purchase</button>
         </div>
       </Div>
-      {/* <Footer /> */}
     </>
   );
 };

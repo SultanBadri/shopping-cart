@@ -80,8 +80,9 @@ const Items: React.FC<CartItems> = ({ cartItems, setCartItems }) => {
 
   return (
     <Div>
-      {planets.map((planet) => (
+      {planets.map((planet, i) => (
         <ShopItem
+          key={i}
           name={planet.name}
           src={planet.src}
           price={planet.price}

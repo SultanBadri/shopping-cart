@@ -2,28 +2,35 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const ItemDiv = styled.div`
-  transition: 0.3s ease;
   padding: 20px;
-  border-radius: 8px;
+  margin: 0 auto;
 
   h2 {
     margin: 0.5rem 0;
-  }
-
-  img {
-    width: 200px;
-    height: 200px;
-  }
-
-  button {
-    background: none;
-    border: none;
-    outline: none;
-    // font-size: 2rem;
-  }
-
-  input {
     text-align: center;
+  }
+
+  div {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .quantity {
+    width: 50%;
+    margin: 1rem auto;
+    .decrease,
+    .increase {
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    input {
+      text-align: center;
+      width: 50%;
+    }
   }
 
   input::-webkit-outer-spin-button,
@@ -78,22 +85,30 @@ const ShopItem: React.FC<ItemKeys> = ({
     setCartItems((prev: any) => [...prev, name]);
   };
 
+  const inputChange = () => {
+    console.log("Order changed");
+  };
+
   return (
     <ItemDiv>
+      <h2>
+        {name}, {price}
+      </h2>
       <div>
-        <h2>
-          {name}, {price}
-        </h2>
-        <img src={src} alt={name} />
-        <br />
-        <button onClick={decrement}>-</button>
-        <input type="number" value={quantity} />
-        <button onClick={increment}>+</button>
-        <br />
-        <button className="add-to-cart" onClick={addToCart}>
-          Add to cart
+        <img src={src} alt={name} height="200px" width="200px" />
+      </div>
+      <div className="quantity">
+        <button className="decrease" onClick={decrement}>
+          -
+        </button>
+        <input type="number" defaultValue={quantity} onChange={inputChange} />
+        <button className="increase" onClick={increment}>
+          +
         </button>
       </div>
+      <button className="add-to-cart" onClick={addToCart}>
+        Add to cart
+      </button>
     </ItemDiv>
   );
 };
