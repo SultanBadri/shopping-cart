@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const ItemDiv = styled.div`
@@ -11,35 +11,11 @@ const ItemDiv = styled.div`
   }
 
   div {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
   }
 
-  .quantity {
-    width: 50%;
-    margin: 1rem auto;
-    .decrease,
-    .increase {
-      background: none;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      font-size: 1.2rem;
-    }
-
-    input {
-      text-align: center;
-      width: 50%;
-    }
-  }
-
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  .add-to-cart {
+  button {
     outline: none;
     border: none;
     padding: 8px 32px;
@@ -58,57 +34,25 @@ const ItemDiv = styled.div`
 `;
 
 interface ItemKeys {
-  name: string;
-  src: string;
-  price: string;
+  planet: any;
   cartItems: never[];
   setCartItems: React.Dispatch<any>;
 }
 
-const ShopItem: React.FC<ItemKeys> = ({
-  name,
-  src,
-  price,
-  cartItems,
-  setCartItems,
-}) => {
-  const [quantity, setQuantity] = useState(0);
-
-  const decrement = () => {
-    if (quantity === 0) return;
-    setQuantity(quantity - 1);
-  };
-
-  const increment = () => setQuantity(quantity + 1);
-
+const ShopItem: React.FC<ItemKeys> = ({ planet, cartItems, setCartItems }) => {
   const addToCart = () => {
-    setCartItems((prev: any) => [...prev, name]);
-  };
-
-  const inputChange = () => {
-    console.log("Order changed");
+    setCartItems((prev: any) => [...prev, planet.name]);
   };
 
   return (
     <ItemDiv>
       <h2>
-        {name}, {price}
+        {planet.name}, {planet.price}
       </h2>
       <div>
-        <img src={src} alt={name} height="200px" width="200px" />
+        <img src={planet.src} alt={planet.name} height="200px" width="200px" />
       </div>
-      <div className="quantity">
-        <button className="decrease" onClick={decrement}>
-          -
-        </button>
-        <input type="number" defaultValue={quantity} onChange={inputChange} />
-        <button className="increase" onClick={increment}>
-          +
-        </button>
-      </div>
-      <button className="add-to-cart" onClick={addToCart}>
-        Add to cart
-      </button>
+      <button onClick={addToCart}>Add to cart</button>
     </ItemDiv>
   );
 };

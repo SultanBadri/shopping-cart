@@ -83,9 +83,7 @@ const Items: React.FC<CartItems> = ({ cartItems, setCartItems }) => {
       {planets.map((planet, i) => (
         <ShopItem
           key={i}
-          name={planet.name}
-          src={planet.src}
-          price={planet.price}
+          planet={planet}
           cartItems={cartItems}
           setCartItems={setCartItems}
         />
