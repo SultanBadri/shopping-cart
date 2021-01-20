@@ -10,12 +10,12 @@ const Ul = styled.ul<Condition>`
   align-items: center;
   justify-content: space-around;
   width: 30%;
+  transition: all 0.3s ease;
 
   li {
     text-decoration: none;
     color: white;
     list-style: none;
-    transition: all 0.3s ease;
   }
 
   li:hover {
@@ -27,7 +27,10 @@ const Ul = styled.ul<Condition>`
   }
 
   @media (max-width: 768px) {
-    display: ${({ open }) => (open ? "block" : "none")};
+    display: block;
+    opacity: ${({ open }) => (open ? "1" : "0")};
+    height: ${({ open }) => (open ? "120px" : "0")};
+    visibility: ${({ open }) => (open ? "visible" : "hidden")};
     flex-direction: column;
     width: 100%;
     padding: 0;
