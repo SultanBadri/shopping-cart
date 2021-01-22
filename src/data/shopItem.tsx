@@ -41,7 +41,7 @@ interface ItemKeys {
 
 const ShopItem: React.FC<ItemKeys> = ({ planet, cartItems, setCartItems }) => {
   const addToCart = () => {
-    setCartItems((prev: any) => [...prev, planet.name]);
+    setCartItems((prev: any) => [...prev, planet]);
   };
 
   return (

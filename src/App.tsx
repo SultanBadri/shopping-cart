@@ -6,7 +6,7 @@ import Cart from "./components/Cart";
 import { HashRouter, Switch, Route } from "react-router-dom";
 
 const App: React.FC = () => {
-  const [cartItems, setCartItems] = useState([] as any);
+  const [cartItems, setCartItems] = useState<any>([]);
 
   return (
     <HashRouter>

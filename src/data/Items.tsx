@@ -34,47 +34,47 @@ const Items: React.FC<CartItems> = ({ cartItems, setCartItems }) => {
     {
       name: "The moon",
       src: theMoon,
-      price: "$5^6",
+      price: "$100^5",
     },
     {
       name: "Mercury",
       src: mercury,
-      price: "$5^10",
+      price: "$100^6",
     },
     {
       name: "Venus",
       src: venus,
-      price: "$5^11",
+      price: "$100^7",
     },
     {
       name: "Mars",
       src: mars,
-      price: "$5^11",
+      price: "$100^6.5",
     },
     {
       name: "Jupiter",
       src: jupiter,
-      price: "$5^11",
+      price: "$100^11",
     },
     {
       name: "Saturn",
       src: saturn,
-      price: "$5^11",
+      price: "$100^10",
     },
     {
       name: "Uranus",
       src: uranus,
-      price: "$5^11",
+      price: "$100^8",
     },
     {
       name: "Neptune",
       src: neptune,
-      price: "$5^11",
+      price: "$100^9",
     },
     {
       name: "Pluto",
       src: pluto,
-      price: "$5^11",
+      price: "$100^4.5",
     },
   ];
 
