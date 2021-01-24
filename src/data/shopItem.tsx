@@ -35,24 +35,35 @@ const ItemDiv = styled.div`
 
 interface ItemKeys {
   planet: any;
-  cartItems: never[];
+  cartItems: any[];
   setCartItems: React.Dispatch<any>;
 }
 
 const ShopItem: React.FC<ItemKeys> = ({ planet, cartItems, setCartItems }) => {
-  const addToCart = () => {
-    setCartItems((prev: any) => [...prev, planet]);
+  const addToCart = (item: any) => {
+    let itemExists = cartItems.find((cartItem) => cartItem.id === item.id);
+    if (itemExists) {
+      setCartItems(
+        cartItems.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...itemExists, quantity: itemExists.quantity + 1 }
+            : cartItem
+        )
+      );
+    } else {
+      setCartItems([...cartItems, { ...item, quantity: 1 }]);
+    }
   };
 
   return (
     <ItemDiv>
       <h2>
-        {planet.name}, {planet.price}
+        {planet.name}, ${planet.price}
       </h2>
       <div>
         <img src={planet.src} alt={planet.name} height="200px" width="200px" />
       </div>
-      <button onClick={addToCart}>Add to cart</button>
+      <button onClick={() => addToCart(planet)}>Add to cart</button>
     </ItemDiv>
   );
 };

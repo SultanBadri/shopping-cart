@@ -4,6 +4,9 @@ import styled from "styled-components";
 const Div = styled.div`
   width: 60%;
   margin: 0 auto;
+  @media (max-width: 420px) {
+    width: 80%;
+  }
 
   h1 {
     margin-top: 3rem;
@@ -37,9 +40,22 @@ const ItemDiv = styled.div`
   border-radius: 8px;
   box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
   padding: 1rem 2rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
 
-  h3,
-  p {
+    img {
+      margin: 0 auto;
+    }
+  }
+
+  img {
+    @media (max-width: 550px) {
+      width: 125px;
+      height: 125px;
+    }
+  }
+
+  h3 {
     color: white;
     margin: 0.5rem 0;
     text-align: center;
@@ -70,8 +86,14 @@ const Cart: React.FC<Items> = ({ cartItems, setCartItems }) => {
     setPurchased(true);
   };
 
+  const totalPrice = () => {
+    return cartItems
+      .map((cartItem: any) => cartItem.price * cartItem.quantity)
+      .reduce((a: number, b: number) => a + b, 0);
+  };
+
   useEffect(() => {
-    console.log("hi");
+    console.log(cartItems);
   }, [purchased, setPurchased]);
 
   return (
@@ -89,12 +111,14 @@ const Cart: React.FC<Items> = ({ cartItems, setCartItems }) => {
               />
               <Text>
                 <h3>{item.name}</h3>
-                <h3>Price: {item.price}</h3>
+                <h3>Price: ${item.price}</h3>
+                <h3>Quantity: {item.quantity}</h3>
               </Text>
             </ItemDiv>
           </ItemsContainer>
         );
       })}
+      <p style={{ textAlign: "center" }}>Total Price: ${totalPrice()}</p>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <button onClick={handlePurchase}>Purchase</button>
       </div>

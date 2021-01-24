@@ -26,7 +26,8 @@ interface CartItems {
 interface PlanetProps {
   name: string;
   src: string;
-  price: string;
+  price: number;
+  id: number;
 }
 
 const Items: React.FC<CartItems> = ({ cartItems, setCartItems }) => {
@@ -34,47 +35,56 @@ const Items: React.FC<CartItems> = ({ cartItems, setCartItems }) => {
     {
       name: "The moon",
       src: theMoon,
-      price: "$100^5",
+      price: 100,
+      id: 1,
     },
     {
       name: "Mercury",
       src: mercury,
-      price: "$100^6",
+      price: 200,
+      id: 2,
     },
     {
       name: "Venus",
       src: venus,
-      price: "$100^7",
+      price: 500,
+      id: 3,
     },
     {
       name: "Mars",
       src: mars,
-      price: "$100^6.5",
+      price: 400,
+      id: 4,
     },
     {
       name: "Jupiter",
       src: jupiter,
-      price: "$100^11",
+      price: 1100,
+      id: 5,
     },
     {
       name: "Saturn",
       src: saturn,
-      price: "$100^10",
+      price: 1000,
+      id: 6,
     },
     {
       name: "Uranus",
       src: uranus,
-      price: "$100^8",
+      price: 800,
+      id: 7,
     },
     {
       name: "Neptune",
       src: neptune,
-      price: "$100^9",
+      price: 900,
+      id: 8,
     },
     {
       name: "Pluto",
       src: pluto,
-      price: "$100^4.5",
+      price: 450,
+      id: 9,
     },
   ];
 

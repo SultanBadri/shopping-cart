@@ -52,6 +52,12 @@ interface Condition {
 }
 
 const Links: React.FC<Condition> = ({ open, cartItems }) => {
+  const totalItems = () => {
+    return cartItems
+      .map((cartItem: any) => cartItem.quantity)
+      .reduce((a: number, b: number) => a + b, 0);
+  };
+
   return (
     <Ul open={open} cartItems={cartItems}>
       <Link to="/" style={{ textDecoration: "none" }}>
@@ -70,7 +76,7 @@ const Links: React.FC<Condition> = ({ open, cartItems }) => {
         <li>
           {" "}
           <CgShoppingCart />
-          Cart {cartItems.length > 0 ? `(${cartItems.length})` : null}
+          Cart {cartItems.length > 0 ? `(${totalItems()})` : null}
         </li>
       </Link>
     </Ul>
