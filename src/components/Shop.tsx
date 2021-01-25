@@ -1,6 +1,7 @@
 import React from "react";
 import Items from "../data/Items";
 import styled from "styled-components";
+import { BiShoppingBag } from "react-icons/bi";
 
 const Div = styled.div`
   width: 60%;
@@ -26,7 +27,9 @@ const Shop: React.FC<CartItems> = ({ cartItems, setCartItems }) => {
   return (
     <>
       <Div>
-        <h1>Shop</h1>
+        <h1>
+          <BiShoppingBag /> SHOP
+        </h1>
         <Items cartItems={cartItems} setCartItems={setCartItems} />
       </Div>
     </>

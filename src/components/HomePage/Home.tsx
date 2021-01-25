@@ -21,6 +21,7 @@ const HeroDiv = styled.div`
     font-size: 3rem;
     text-align: center;
     color: white;
+    font-family: "Poppins", sans-serif;
   }
 
   button {
@@ -77,7 +78,7 @@ const GalleryDiv = styled.div`
   align-items: center;
   justify-content: center;
   width: 80%;
-  margin: 3rem auto;
+  margin: 4rem auto;
 
   img {
     padding: 20px;
@@ -99,7 +100,7 @@ const Home = () => {
         </Link>
       </HeroDiv>
       <AboutDiv>
-        <h2>About us</h2>
+        <h2>ABOUT US</h2>
       </AboutDiv>
       <AboutP>
         Thanks to laws passed by the World Congress in 2092, anyone on Earth is

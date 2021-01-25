@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import ErrorModal from "./Modals/ErrorModal";
+import PurchaseModal from "./Modals/PurchaseModal";
 import styled from "styled-components";
+import { CgShoppingCart } from "react-icons/cg";
 
 const Div = styled.div`
   width: 60%;
@@ -8,9 +11,13 @@ const Div = styled.div`
     width: 80%;
   }
 
-  h1 {
-    margin-top: 3rem;
-    text-align: center;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem auto;
+    border-bottom: 3px solid #1b7fbd;
+    width: 90%;
   }
 
   button {
@@ -72,6 +79,7 @@ interface Items {
 }
 
 const Cart: React.FC<Items> = ({ cartItems, setCartItems }) => {
+  const [empty, setEmpty] = useState(false);
   const [purchased, setPurchased] = useState(false);
 
   const title = document.getElementById("title");
@@ -80,10 +88,12 @@ const Cart: React.FC<Items> = ({ cartItems, setCartItems }) => {
   }
 
   const handlePurchase = () => {
-    if (!cartItems.length) return alert("You have nothing in your cart");
-    setCartItems([]);
-    alert("Thank you for your purchase!");
-    setPurchased(true);
+    if (!cartItems.length) {
+      setEmpty(true);
+    } else {
+      setPurchased(true);
+      setCartItems([]);
+    }
   };
 
   const totalPrice = () => {
@@ -92,37 +102,54 @@ const Cart: React.FC<Items> = ({ cartItems, setCartItems }) => {
       .reduce((a: number, b: number) => a + b, 0);
   };
 
-  useEffect(() => {
-    console.log(cartItems);
-  }, [purchased, setPurchased]);
+  const totalItems = () => {
+    return cartItems
+      .map((cartItem: any) => cartItem.quantity)
+      .reduce((a: number, b: number) => a + b, 0);
+  };
 
   return (
-    <Div>
-      <h1>My cart</h1>
-      {cartItems.map((item, i) => {
-        return (
-          <ItemsContainer key={i}>
-            <ItemDiv>
-              <img
-                src={item.src}
-                alt={item.name}
-                height="200px"
-                width="200px"
-              />
-              <Text>
-                <h3>{item.name}</h3>
-                <h3>Price: ${item.price}</h3>
-                <h3>Quantity: {item.quantity}</h3>
-              </Text>
-            </ItemDiv>
-          </ItemsContainer>
-        );
-      })}
-      <p style={{ textAlign: "center" }}>Total Price: ${totalPrice()}</p>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <button onClick={handlePurchase}>Purchase</button>
-      </div>
-    </Div>
+    <>
+      <Div>
+        <div className="header">
+          <h1>
+            <CgShoppingCart /> MY CART
+          </h1>
+          <h3>{totalItems()} Items</h3>
+        </div>
+        {cartItems.map((item, i) => {
+          return (
+            <ItemsContainer key={i}>
+              <ItemDiv>
+                <img
+                  src={item.src}
+                  alt={item.name}
+                  height="200px"
+                  width="200px"
+                />
+                <Text>
+                  <h3>{item.name}</h3>
+                  <h3>Price: ${item.price}</h3>
+                  <h3>Quantity: {item.quantity}</h3>
+                </Text>
+              </ItemDiv>
+            </ItemsContainer>
+          );
+        })}
+        <p style={{ textAlign: "center" }}>Total Price: ${totalPrice()}</p>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <button onClick={handlePurchase}>Purchase</button>
+        </div>
+      </Div>
+
+      {empty ? <ErrorModal setEmpty={setEmpty} /> : null}
+      {purchased ? <PurchaseModal setPurchased={setPurchased} /> : null}
+    </>
   );
 };
 

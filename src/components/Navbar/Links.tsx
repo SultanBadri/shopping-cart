@@ -16,10 +16,11 @@ const Ul = styled.ul<Condition>`
     text-decoration: none;
     color: white;
     list-style: none;
+    transition: all 0.3s ease;
   }
 
   li:hover {
-    color: #f7ec77;
+    color: #e7daf0;
   }
 
   @media (max-width: 1024px) {
