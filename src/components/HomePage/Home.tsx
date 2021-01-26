@@ -21,10 +21,10 @@ const HeroDiv = styled.div`
     font-size: 3rem;
     text-align: center;
     color: white;
-    font-family: "Poppins", sans-serif;
   }
 
   button {
+    font-family: "Poppins", sans-serif;
     outline: none;
     border: none;
     padding: 8px 40px;
@@ -78,7 +78,7 @@ const GalleryDiv = styled.div`
   align-items: center;
   justify-content: center;
   width: 80%;
-  margin: 4rem auto;
+  margin: 3rem auto;
 
   img {
     padding: 20px;

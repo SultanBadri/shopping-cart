@@ -42,7 +42,7 @@ const Ul = styled.ul<Condition>`
     }
     li:hover {
       color: white;
-      background: #474b52;
+      background: #9cb1db;
     }
   }
 `;
@@ -63,21 +63,30 @@ const Links: React.FC<Condition> = ({ open, cartItems }) => {
     <Ul open={open} cartItems={cartItems}>
       <Link to="/" style={{ textDecoration: "none" }}>
         <li>
-          {" "}
           <TiHomeOutline /> Home
         </li>
       </Link>
       <Link to="/shop" style={{ textDecoration: "none" }}>
         <li>
-          {" "}
           <BiShoppingBag /> Shop
         </li>
       </Link>
       <Link to="/cart" style={{ textDecoration: "none" }}>
         <li>
-          {" "}
           <CgShoppingCart />
-          Cart {cartItems.length > 0 ? `(${totalItems()})` : null}
+          Cart{" "}
+          {cartItems.length > 0 ? (
+            <span
+              style={{
+                background: "#595cae",
+                padding: "4px 8px",
+                borderRadius: "50%",
+                color: "white",
+              }}
+            >
+              {totalItems()}
+            </span>
+          ) : null}
         </li>
       </Link>
     </Ul>

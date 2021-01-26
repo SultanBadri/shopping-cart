@@ -16,6 +16,7 @@ const ItemDiv = styled.div`
   }
 
   button {
+    font-family: "Poppins", sans-serif;
     outline: none;
     border: none;
     padding: 8px 32px;

@@ -9,11 +9,11 @@ const Div = styled.div`
   text-align: center;
   background: #595cae;
   bottom: 0;
-  padding: 10px;
   color: white;
 
   h3 {
     font-size: 1.8rem;
+    padding-top: 2rem;
   }
 
   div {

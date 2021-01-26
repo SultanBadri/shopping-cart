@@ -36,6 +36,7 @@ const Paragraph = styled.p`
 `;
 
 const Button = styled.div`
+  font-family: "Poppins", sans-serif;
   outline: none;
   border: none;
   border-radius: 4px;
