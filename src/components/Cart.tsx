@@ -19,27 +19,7 @@ const Div = styled.div`
     border-bottom: 3px solid #1b7fbd;
     width: 90%;
   }
-
-  button {
-    font-family: "Poppins", sans-serif;
-    outline: none;
-    border: none;
-    padding: 8px 40px;
-    border-radius: 4px;
-    background: transparent;
-    border: 2px solid #1b7fbd;
-    cursor: pointer;
-    letter-spacing: 1px;
-    transition: 0.3s ease;
-    margin-bottom: 5rem;
-    &:hover {
-      background: #1b7fbd;
-      color: white;
-    }
-  }
 `;
-
-const ItemsContainer = styled.div``;
 
 const ItemDiv = styled.div`
   display: flex;
@@ -70,8 +50,44 @@ const ItemDiv = styled.div`
   }
 `;
 
+const ItemButtons = styled.button`
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  border: none;
+  padding: 4px 24px;
+  margin: 0 2rem;
+  border-radius: 4px;
+  background: transparent;
+  border: 2px solid #1b7fbd;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+  &:hover {
+    background: #1b7fbd;
+    color: white;
+  }
+`;
+
 const Text = styled.div`
   margin-left: 1rem;
+`;
+
+const PurchaseButton = styled.button`
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  border: none;
+  padding: 8px 40px;
+  border-radius: 4px;
+  background: transparent;
+  border: 2px solid #1b7fbd;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+  margin-bottom: 5rem;
+  &:hover {
+    background: #1b7fbd;
+    color: white;
+  }
 `;
 
 interface Items {
@@ -109,6 +125,26 @@ const Cart: React.FC<Items> = ({ cartItems, setCartItems }) => {
       .reduce((a: number, b: number) => a + b, 0);
   };
 
+  const removeItem = (item: any) => {
+    let itemToRemove = cartItems.find((cartItem) => cartItem.id === item.id);
+
+    if (itemToRemove.quantity === 1) {
+      setCartItems(cartItems.filter((cartItem) => cartItem.id !== item.id));
+    } else {
+      setCartItems(
+        cartItems.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...itemToRemove, quantity: itemToRemove.quantity - 1 }
+            : cartItem
+        )
+      );
+    }
+  };
+
+  // const removeAll = () => {
+  //   setCartItems([]);
+  // };
+
   return (
     <>
       <Div>
@@ -120,7 +156,7 @@ const Cart: React.FC<Items> = ({ cartItems, setCartItems }) => {
         </div>
         {cartItems.map((item, i) => {
           return (
-            <ItemsContainer key={i}>
+            <div key={i}>
               <ItemDiv>
                 <img
                   src={item.src}
@@ -132,9 +168,13 @@ const Cart: React.FC<Items> = ({ cartItems, setCartItems }) => {
                   <h3>{item.name}</h3>
                   <h3>Price: ${item.price}</h3>
                   <h3>Quantity: {item.quantity}</h3>
+                  <ItemButtons onClick={() => removeItem(item)}>
+                    Remove one item
+                  </ItemButtons>
+                  {/* <ItemButtons onClick={removeAll}>Remove all</ItemButtons> */}
                 </Text>
               </ItemDiv>
-            </ItemsContainer>
+            </div>
           );
         })}
         <p style={{ textAlign: "center" }}>Total Price: ${totalPrice()}</p>
@@ -144,7 +184,7 @@ const Cart: React.FC<Items> = ({ cartItems, setCartItems }) => {
             justifyContent: "center",
           }}
         >
-          <button onClick={handlePurchase}>Purchase</button>
+          <PurchaseButton onClick={handlePurchase}>Purchase</PurchaseButton>
         </div>
       </Div>
 

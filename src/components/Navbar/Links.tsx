@@ -32,6 +32,7 @@ const Ul = styled.ul<Condition>`
     opacity: ${({ open }) => (open ? "1" : "0")};
     height: ${({ open }) => (open ? "120px" : "0")};
     visibility: ${({ open }) => (open ? "visible" : "hidden")};
+    margin: ${({ open }) => (open ? "2rem 0" : "0")};
     flex-direction: column;
     width: 100%;
     padding: 0;
