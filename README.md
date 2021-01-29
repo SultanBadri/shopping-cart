@@ -1,4 +1,4 @@
-# Memory Cards
+# Shopping Cart
 
 ### [Live Demo](https://sultanbadri.github.io/shopping-cart/#/)
 
