@@ -7,7 +7,7 @@ import { CgShoppingCart } from "react-icons/cg";
 const Div = styled.div`
   width: 60%;
   margin: 0 auto;
-  @media (max-width: 420px) {
+  @media (max-width: 510px) {
     width: 80%;
   }
 
@@ -18,6 +18,14 @@ const Div = styled.div`
     margin: 2rem auto;
     border-bottom: 3px solid #1b7fbd;
     width: 90%;
+    @media (max-width: 510px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+      h3 {
+        font-size: 0.8rem;
+      }
+    }
   }
 `;
 
@@ -38,7 +46,7 @@ const ItemDiv = styled.div`
   }
 
   img {
-    @media (max-width: 550px) {
+    @media (max-width: 650px) {
       width: 125px;
       height: 125px;
     }
@@ -49,10 +57,17 @@ const ItemDiv = styled.div`
     margin: 0.5rem 0;
     text-align: center;
   }
+  @media (min-width: 710px) {
+    padding: 1rem;
+  }
 `;
 
 const ItemText = styled.div`
   margin: 0 1rem;
+
+  @media (max-width: 710px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const ItemButtons = styled.button`
@@ -68,10 +83,13 @@ const ItemButtons = styled.button`
   letter-spacing: 1px;
   transition: 0.3s ease;
   color: white;
+  white-space: nowrap;
   &:hover {
     background: #1b7fbd;
   }
-  @media (max-width: 860px) {
+  @media (max-width: 700px) {
+    font-size: 0.8rem;
+    display: flex;
   }
 `;
 

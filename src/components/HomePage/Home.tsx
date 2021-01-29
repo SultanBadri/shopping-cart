@@ -21,6 +21,9 @@ const HeroDiv = styled.div`
     font-size: 3rem;
     text-align: center;
     color: white;
+    @media (max-width: 420px) {
+      font-size: 2rem;
+    }
   }
 
   button {
@@ -37,6 +40,9 @@ const HeroDiv = styled.div`
     transition: 0.3s ease;
     &:hover {
       background: #1b7fbd;
+    }
+    @media (max-width: 420px) {
+      padding: 4px 20px;
     }
   }
 `;

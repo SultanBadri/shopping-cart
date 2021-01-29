@@ -1,6 +1,7 @@
 import React from "react";
 import ShopItem from "./ShopItem";
 import styled from "styled-components";
+import theSun from "../images/sun.jpg";
 import theMoon from "../images/moon.jpg";
 import mercury from "../images/mercury.png";
 import venus from "../images/venus.jpg";
@@ -10,6 +11,8 @@ import saturn from "../images/saturn.jpg";
 import uranus from "../images/uranus.jpg";
 import neptune from "../images/neptune.jpg";
 import pluto from "../images/pluto.jpg";
+import halleysComet from "../images/halley's_comet.jpg";
+import orionsBelt from "../images/orion's_belt.jpg";
 
 const Div = styled.div`
   display: flex;
@@ -85,6 +88,24 @@ const Items: React.FC<CartItems> = ({ cartItems, setCartItems }) => {
       src: pluto,
       price: 450,
       id: 9,
+    },
+    {
+      name: "Sun",
+      src: theSun,
+      price: 3000,
+      id: 10,
+    },
+    {
+      name: "A Comet",
+      src: halleysComet,
+      price: 50,
+      id: 11,
+    },
+    {
+      name: "Orion's Belt",
+      src: orionsBelt,
+      price: 900,
+      id: 12,
     },
   ];
 

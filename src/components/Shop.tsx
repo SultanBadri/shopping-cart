@@ -11,6 +11,10 @@ const Div = styled.div`
     margin-top: 3rem;
     text-align: center;
   }
+
+  p {
+    text-align: center;
+  }
 `;
 
 interface CartItems {
@@ -30,6 +34,7 @@ const Shop: React.FC<CartItems> = ({ cartItems, setCartItems }) => {
         <h1>
           <BiShoppingBag /> SHOP
         </h1>
+        <p>NOTE: Each item is missing eleven zeros. Happy shopping!</p>
         <Items cartItems={cartItems} setCartItems={setCartItems} />
       </Div>
     </>

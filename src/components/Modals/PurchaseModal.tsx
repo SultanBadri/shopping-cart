@@ -17,15 +17,21 @@ const ModalDiv = styled.div`
   background: #3e4242;
   color: white;
   @media (max-width: 420px) {
-    padding: 2rem 3rem;
+    padding: 1rem;
   }
   @media (max-width: 360px) {
-    padding: 1rem 2rem;
+    padding: 0.5rem;
   }
 `;
 
 const H1 = styled.h1`
   white-space: nowrap;
+  @media (max-width: 420px) {
+    font-size: 1.2rem;
+  }
+  @media (max-width: 360px) {
+    font-size: 1rem;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -33,6 +39,12 @@ const Paragraph = styled.p`
   font-size: 1.2rem;
   white-space: nowrap;
   color: #cccccc;
+  @media (max-width: 420px) {
+    font-size: 0.8rem;
+  }
+  @media (max-width: 360px) {
+    font-size: 0.7rem;
+  }
 `;
 
 const Button = styled.div`
@@ -49,6 +61,12 @@ const Button = styled.div`
   &:hover {
     background: #1b7fbd;
     color: white;
+  }
+  @media (max-width: 420px) {
+    padding: 4px;
+  }
+  @media (max-width: 360px) {
+    padding: 2px;
   }
 `;
 

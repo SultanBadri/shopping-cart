@@ -28,7 +28,7 @@ const HamburgerMenu = styled.div<{ open: boolean }>`
   @media (max-width: 768px) {
     display: block;
     position: absolute;
-    top: 2.5%;
+    top: 3%;
     right: 6%;
   }
 `;
