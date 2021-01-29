@@ -1,19 +1,21 @@
 {
   "files": {
-    "main.js": "/shopping-cart/static/js/main.a359363d.chunk.js",
-    "main.js.map": "/shopping-cart/static/js/main.a359363d.chunk.js.map",
+    "main.js": "/shopping-cart/static/js/main.9226b8ab.chunk.js",
+    "main.js.map": "/shopping-cart/static/js/main.9226b8ab.chunk.js.map",
     "runtime-main.js": "/shopping-cart/static/js/runtime-main.b56c1ee8.js",
     "runtime-main.js.map": "/shopping-cart/static/js/runtime-main.b56c1ee8.js.map",
     "static/js/2.5296232f.chunk.js": "/shopping-cart/static/js/2.5296232f.chunk.js",
     "static/js/2.5296232f.chunk.js.map": "/shopping-cart/static/js/2.5296232f.chunk.js.map",
     "index.html": "/shopping-cart/index.html",
     "static/js/2.5296232f.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.5296232f.chunk.js.LICENSE.txt",
+    "static/media/halley's_comet.37c29481.jpg": "/shopping-cart/static/media/halley's_comet.37c29481.jpg",
     "static/media/jupiter.11c08118.jpg": "/shopping-cart/static/media/jupiter.11c08118.jpg",
     "static/media/mercury.89d337b3.png": "/shopping-cart/static/media/mercury.89d337b3.png",
     "static/media/moon.3321185e.jpg": "/shopping-cart/static/media/moon.3321185e.jpg",
     "static/media/moon_and_stars.c15fecf9.jpg": "/shopping-cart/static/media/moon_and_stars.c15fecf9.jpg",
     "static/media/mountain.a20f880b.jpg": "/shopping-cart/static/media/mountain.a20f880b.jpg",
     "static/media/neptune.6b8f4c54.jpg": "/shopping-cart/static/media/neptune.6b8f4c54.jpg",
+    "static/media/orion's_belt.23ce5641.jpg": "/shopping-cart/static/media/orion's_belt.23ce5641.jpg",
     "static/media/pluto.b217ce71.jpg": "/shopping-cart/static/media/pluto.b217ce71.jpg",
     "static/media/space.4234a325.jpeg": "/shopping-cart/static/media/space.4234a325.jpeg",
     "static/media/stars.fe5727fb.jpg": "/shopping-cart/static/media/stars.fe5727fb.jpg",
@@ -23,6 +25,6 @@
   "entrypoints": [
     "static/js/runtime-main.b56c1ee8.js",
     "static/js/2.5296232f.chunk.js",
-    "static/js/main.a359363d.chunk.js"
+    "static/js/main.9226b8ab.chunk.js"
   ]
 }
