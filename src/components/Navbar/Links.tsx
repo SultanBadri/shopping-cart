@@ -10,13 +10,13 @@ const Ul = styled.ul<Condition>`
   align-items: center;
   justify-content: space-around;
   width: 30%;
-  transition: all 0.3s ease;
+  transition: opacity 0.15s ease, height 0.3s ease, visibility 0.3s ease,
+    margin 0.3s ease;
 
   li {
     text-decoration: none;
     color: white;
     list-style: none;
-    transition: all 0.3s ease;
   }
 
   li:hover {

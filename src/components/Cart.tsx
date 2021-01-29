@@ -28,8 +28,9 @@ const ItemDiv = styled.div`
   border-radius: 8px;
   box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
   padding: 1rem 2rem;
-  @media (max-width: 768px) {
+  @media (max-width: 860px) {
     flex-direction: column;
+    align-items: center;
 
     img {
       margin: 0 auto;
@@ -50,26 +51,28 @@ const ItemDiv = styled.div`
   }
 `;
 
+const ItemText = styled.div`
+  margin: 0 1rem;
+`;
+
 const ItemButtons = styled.button`
   font-family: "Poppins", sans-serif;
   outline: none;
   border: none;
-  padding: 4px 24px;
-  margin: 0 2rem;
+  padding: 4px 16px;
+  margin: 0.5rem 1rem;
   border-radius: 4px;
   background: transparent;
   border: 2px solid #1b7fbd;
   cursor: pointer;
   letter-spacing: 1px;
   transition: 0.3s ease;
+  color: white;
   &:hover {
     background: #1b7fbd;
-    color: white;
   }
-`;
-
-const Text = styled.div`
-  margin-left: 1rem;
+  @media (max-width: 860px) {
+  }
 `;
 
 const PurchaseButton = styled.button`
@@ -141,9 +144,20 @@ const Cart: React.FC<Items> = ({ cartItems, setCartItems }) => {
     }
   };
 
-  // const removeAll = () => {
-  //   setCartItems([]);
-  // };
+  const addToCart = (item: any) => {
+    let itemExists = cartItems.find((cartItem) => cartItem.id === item.id);
+    if (itemExists) {
+      setCartItems(
+        cartItems.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...itemExists, quantity: itemExists.quantity + 1 }
+            : cartItem
+        )
+      );
+    } else {
+      setCartItems([...cartItems, { ...item, quantity: 1 }]);
+    }
+  };
 
   return (
     <>
@@ -164,15 +178,18 @@ const Cart: React.FC<Items> = ({ cartItems, setCartItems }) => {
                   height="200px"
                   width="200px"
                 />
-                <Text>
-                  <h3>{item.name}</h3>
-                  <h3>Price: ${item.price}</h3>
+                <ItemText>
+                  <h3>
+                    {item.name}, Price: ${item.price}
+                  </h3>
                   <h3>Quantity: {item.quantity}</h3>
                   <ItemButtons onClick={() => removeItem(item)}>
-                    Remove one item
+                    - Remove
                   </ItemButtons>
-                  {/* <ItemButtons onClick={removeAll}>Remove all</ItemButtons> */}
-                </Text>
+                  <ItemButtons onClick={() => addToCart(item)}>
+                    + Add
+                  </ItemButtons>
+                </ItemText>
               </ItemDiv>
             </div>
           );
