@@ -2,6 +2,8 @@
 
 ### [Live Demo](https://sultanbadri.github.io/shopping-cart/#/)
 
+![shopping_cart](https://user-images.githubusercontent.com/46205282/106345850-f2d30000-6267-11eb-9fb2-f6c038bf3459.gif)
+
 #### 📝 Description
 A react shopping-cart made using React Router. 
 
