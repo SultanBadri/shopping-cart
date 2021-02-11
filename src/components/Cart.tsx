@@ -32,9 +32,9 @@ const Div = styled.div`
 const ItemDiv = styled.div`
   display: flex;
   margin: 2rem;
-  background: #595cae;
+  border: 2px solid #595cae;
   border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
+  box-shadow: 0 10px 25px rgba(92, 99, 105, 0.1);
   padding: 1rem 2rem;
   @media (max-width: 860px) {
     flex-direction: column;
@@ -53,7 +53,7 @@ const ItemDiv = styled.div`
   }
 
   h3 {
-    color: white;
+    color: black;
     margin: 0.5rem 0;
     text-align: center;
   }
@@ -78,14 +78,15 @@ const ItemButtons = styled.button`
   margin: 0.5rem 1rem;
   border-radius: 4px;
   background: transparent;
-  border: 2px solid #1b7fbd;
+  border: 2px solid #595cae;
   cursor: pointer;
   letter-spacing: 1px;
   transition: 0.3s ease;
-  color: white;
+  color: black;
   white-space: nowrap;
   &:hover {
-    background: #1b7fbd;
+    background: #595cae;
+    color: white;
   }
   @media (max-width: 700px) {
     font-size: 0.8rem;
@@ -100,13 +101,13 @@ const PurchaseButton = styled.button`
   padding: 8px 40px;
   border-radius: 4px;
   background: transparent;
-  border: 2px solid #1b7fbd;
+  border: 2px solid #595cae;
   cursor: pointer;
   letter-spacing: 1px;
   transition: 0.3s ease;
   margin-bottom: 5rem;
   &:hover {
-    background: #1b7fbd;
+    background: #595cae;
     color: white;
   }
 `;
