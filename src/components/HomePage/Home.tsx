@@ -40,6 +40,7 @@ const HeroDiv = styled.div`
     transition: 0.3s ease;
     &:hover {
       background: #1b7fbd;
+      box-shadow: 0 0 0 4px rgba(27, 127, 189, 0.5);
     }
     @media (max-width: 420px) {
       padding: 4px 20px;

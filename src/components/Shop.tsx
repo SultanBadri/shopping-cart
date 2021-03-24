@@ -5,7 +5,7 @@ import { BiShoppingBag } from "react-icons/bi";
 
 const Div = styled.div`
   width: 60%;
-  margin: 0 auto;
+  margin: 3rem auto;
 
   h1 {
     margin-top: 3rem;
@@ -34,7 +34,10 @@ const Shop: React.FC<CartItems> = ({ cartItems, setCartItems }) => {
         <h1>
           <BiShoppingBag /> SHOP
         </h1>
-        <p>NOTE: Each item is missing eleven zeros. Happy shopping!</p>
+        <p>
+          <strong>NOTE:</strong> Each item is missing eleven zeros. Happy
+          shopping!
+        </p>
         <Items cartItems={cartItems} setCartItems={setCartItems} />
       </Div>
     </>

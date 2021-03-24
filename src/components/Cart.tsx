@@ -107,6 +107,7 @@ const PurchaseButton = styled.button`
   transition: 0.3s ease;
   margin-bottom: 5rem;
   &:hover {
+    box-shadow: 0 0 0 4px rgba(89, 92, 174, 0.5);
     background: #595cae;
     color: white;
   }

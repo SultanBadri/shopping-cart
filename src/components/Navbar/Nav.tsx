@@ -29,14 +29,16 @@ interface Items {
 
 const Nav: React.FC<Items> = ({ cartItems }) => {
   return (
-    <Navbar>
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <H2>
-          Odinzom <BiPlanet style={{ verticalAlign: "middle" }} />
-        </H2>
-      </Link>
-      <BurgerMenu cartItems={cartItems} />
-    </Navbar>
+    <div>
+      <Navbar>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <H2>
+            Odinzom <BiPlanet style={{ verticalAlign: "middle" }} />
+          </H2>
+        </Link>
+        <BurgerMenu cartItems={cartItems} />
+      </Navbar>
+    </div>
   );
 };
 

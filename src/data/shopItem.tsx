@@ -64,7 +64,9 @@ const ShopItem: React.FC<ItemKeys> = ({ planet, cartItems, setCartItems }) => {
       <div>
         <img src={planet.src} alt={planet.name} height="200px" width="200px" />
       </div>
-      <button onClick={() => addToCart(planet)}>Add to cart</button>
+      <button onClick={() => addToCart(planet)} style={{ fontWeight: "bold" }}>
+        Add to cart
+      </button>
     </ItemDiv>
   );
 };
